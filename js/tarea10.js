@@ -1,7 +1,7 @@
 
 function creadorDelista(max){
     
-    if(capturarNumero()===0){
+    if(ObtenerNumDeFamiliares()===0){
         alert("por favor, ingresa un numero de familiares")
     }
     else{
@@ -17,11 +17,11 @@ function creadorDelista(max){
         label.setAttributeNode(id)
         document.querySelector("#arrayFamilia").appendChild(li);  
     }
-    ocultadorBoton(true)
+    ocultarBoton(true)
     }
 };
 
-function arrayTrabajo(){
+function ObtenerArrayFamiliares(){
     let testArray = document.querySelector('#arrayFamilia').getElementsByClassName('familiar')
     return testArray
 }
@@ -60,14 +60,14 @@ function creadorDeInputs(array,valor){
 function crearMasFamiliares(cantidad){
     let FamiliaresIni=document.querySelector("#botonAgregarInicial")
 
-    if (arrayTrabajo().length===0){
+    if (ObtenerArrayFamiliares().length===0){
         alert("por favor, ingresa un numero de familiares")
        
 
     }
     
     else{
-    let contador=arrayTrabajo().length
+    let contador=ObtenerArrayFamiliares().length
     for (x=0;x<cantidad;x+=1){
         let li=document.createElement("li");
         let classT=document.createAttribute("class")
@@ -77,11 +77,11 @@ function crearMasFamiliares(cantidad){
         let padre=familiar.parentNode
         padre.insertBefore(li,familiar[-1])
     }
-    creadorDeInputs(arrayTrabajo(),contador)
+    creadorDeInputs(ObtenerArrayFamiliares(),contador)
     }
 }
 
-function ocultadorBoton(valor){
+function ocultarBoton(valor){
     let boton=document.querySelector("#botonAgregarInicial")
     let boton2=document.querySelector("#botonAgregarSecundario")
     let boton3=document.querySelector("#botonQuitarFamiliar")
@@ -103,32 +103,26 @@ function ocultadorBoton(valor){
 }
 
 
-function maximoArray(array) {
+function ObtenerEdadMaxima(array) {
     
     if (array.length<=2){
         let hidden=document.createAttribute("hidden")
         H2Cambiante2.setAttributeNode(hidden)
-        alert(" es necesario al menos 3 familiares para poder calcular")
-        
-        
+        alert(" es necesario al menos 3 familiares para poder calcular") 
     }else{
         H2Cambiante2.removeAttribute('hidden')
         return Math.max.apply(null, array);
-        
-        
     } 
 }
 
-function minimoArray(array) {
+function ObtenerEdadMinima(array) {
     if (array.length<=2){
-       
     }else{
-        
         return Math.min.apply(null, array);
     }
 }
 
-function promedio(array){
+function ObtenerPromedio(array){
     if (array.length<=2){
        
     }else{
@@ -141,13 +135,13 @@ function promedio(array){
 
 }
 
-function capturarNumero(){
+function ObtenerNumDeFamiliares(){
     let numeroPersonas=document.querySelector("#edad")
     let edadNumero=Number(numeroPersonas.value)
     return edadNumero
 }
 
-function arrayValoresFamiliares(array){
+function ObtenerEdadFamiliares(array){
     let arrayValores=[]
     for (x of array){
         arrayValores.push(Number(x.childNodes[1].value))
@@ -160,11 +154,11 @@ function removerFamiliar(){
     let FamiliaresIni=document.querySelector("#botonAgregarInicial")
     let agregarFaSec=document.querySelector("#botonAgregarSecundario")
     let hidden=document.createAttribute("hidden")
-    if(arrayTrabajo().length===0&&FamiliaresIni.hidden){
+    if(ObtenerArrayFamiliares().length===0&&FamiliaresIni.hidden){
         FamiliaresIni.removeAttribute("hidden")
         agregarFaSec.setAttributeNode(hidden)
-    }else if (arrayTrabajo().length>0){
-    arrayTrabajo()[arrayTrabajo().length-1].remove()
+    }else if (ObtenerArrayFamiliares().length>0){
+    ObtenerArrayFamiliares()[ObtenerArrayFamiliares().length-1].remove()
     }
 }
 

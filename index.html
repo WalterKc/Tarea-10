@@ -35,14 +35,14 @@
         
       </div>
       <input class="btn btn-primary" type="button" id="botonAgregarInicial"  value="agregar familiares"
-          onClick="creadorDelista(capturarNumero());creadorDeInputs(arrayTrabajo(),0)" />
+          onClick="creadorDelista(ObtenerNumDeFamiliares());creadorDeInputs(ObtenerArrayFamiliares(),0)" />
       <input class="btn btn-primary" type="button" id="botonAgregarSecundario"  value="agregar mas familiares"
-          onClick="crearMasFamiliares(capturarNumero())" hidden/>
+          onClick="crearMasFamiliares(ObtenerNumDeFamiliares())" hidden/>
       <input class="btn btn-primary" type="button" id="botonQuitarFamiliar"  value="quitar 1 familiar" 
           onClick="removerFamiliar()" hidden/>
       <input class="btn btn-primary" type="button" id="botonCalcular"  value="calcular" 
-          onClick="H2Cambiante2.innerHTML='la edad maxima de esta familia es '+ maximoArray(arrayValoresFamiliares(arrayTrabajo()))+
-          ' la minima es '+ minimoArray(arrayValoresFamiliares(arrayTrabajo())) + ' y la promedio es '+ promedio(arrayValoresFamiliares(arrayTrabajo()))
+          onClick="H2Cambiante2.innerHTML='la edad maxima de esta familia es '+ ObtenerEdadMaxima(ObtenerEdadFamiliares(ObtenerArrayFamiliares()))+
+          ' la minima es '+ ObtenerEdadMinima(ObtenerEdadFamiliares(ObtenerArrayFamiliares())) + ' y la ObtenerPromedio es '+ ObtenerPromedio(ObtenerEdadFamiliares(ObtenerArrayFamiliares()))
            "/>
     </form>
 
