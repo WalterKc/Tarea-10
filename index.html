@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>tarea 6</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=GFS+Didot">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+<main>
+  
+</main>
+
+<body>
+  <header>
+    <div class="alert alert-info" role="alert">
+      <h1 id="textoCambio">EJERCICIO 6</h1>
+    </div>
+    
+    <div class="alert alert-info" role="alert">
+      <h2 id="textoH2"> hola, este es el ejercicio 6 parte 1, primero vamos a preguntar, ¿cuantas personas
+        hay en la familia?
+      </h2>
+    </div>
+
+    
+    <form>
+      <div class="mb-3">
+        <label class="test3" for="sueldo">ingrese cantidad de personas:</label>
+        <input class="form-control" type="number" aria-describedby="emailHelp" id="edad" placeholder="numero de integrantes" />
+      </div>
+      <input class="btn btn-primary" type="button" id="botonAgregarInicial"  value="agregar familiares"
+          onClick="creadorDelista(capturarNumero());creadorDeInputs(arrayTrabajo(),0)" />
+      <input class="btn btn-primary" type="button" id="botonAgregarSecundario"  value="agregar mas familiares"
+          onClick="crearMasFamiliares(capturarNumero())" hidden/>
+      <input class="btn btn-primary" type="button" id="botonQuitarFamiliar"  value="quitar 1 familiar" 
+          onClick="removerFamiliar()" hidden/>
+      <input class="btn btn-primary" type="button" id="botonCalcular"  value="calcular" 
+          onClick="H2Cambiante2.innerHTML='la edad maxima de esta familia es '+ maximoArray(arrayValoresFamiliares(arrayTrabajo()))+
+          ' la minima es '+ minimoArray(arrayValoresFamiliares(arrayTrabajo())) + ' y la promedio es '+ promedio(arrayValoresFamiliares(arrayTrabajo()))
+           "/>
+    </form>
+
+    <form>
+        <div class="mb-3">
+          <un id="arrayFamilia">
+          </un>
+        </div>
+        <button type="button" class="btn btn-info">RESET</button>
+    </form>
+  <div class="alert alert-warning" role="alert" id="textoH2B" hidden>
+      <h2 id="textoH2B" hidden>la edad maxima de esta familia es X, la minima es X, y la promedio es X</h2>
+  </div>
+
+</body>
+</footer>
+
+<script src="js/tarea10js"></script>
+</body>
+</html>
