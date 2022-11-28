@@ -31,6 +31,8 @@
       <div class="mb-3">
         <label class="test3" for="sueldo">ingrese cantidad de personas:</label>
         <input class="form-control" type="number" aria-describedby="emailHelp" id="edad" placeholder="numero de integrantes" />
+        
+        
       </div>
       <input class="btn btn-primary" type="button" id="botonAgregarInicial"  value="agregar familiares"
           onClick="creadorDelista(capturarNumero());creadorDeInputs(arrayTrabajo(),0)" />
@@ -49,13 +51,17 @@
           <un id="arrayFamilia">
           </un>
         </div>
-        <button type="button" class="btn btn-info">RESET</button>
+        <button type="submit" class="btn btn-info">RESET</button>
+       
+        
     </form>
-  <div class="alert alert-warning" role="alert" id="textoH2B" hidden>
+      <div class="alert alert-warning" role="alert" id="textoH2B" hidden>
       <h2 id="textoH2B" hidden>la edad maxima de esta familia es X, la minima es X, y la promedio es X</h2>
   </div>
 
 </body>
+
+ 
 </footer>
 
 <script src="js/tarea10.js"></script>

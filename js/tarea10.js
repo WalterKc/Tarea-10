@@ -58,12 +58,16 @@ function creadorDeInputs(array,valor){
 
 
 function crearMasFamiliares(cantidad){
+    let FamiliaresIni=document.querySelector("#botonAgregarInicial")
+
     if (arrayTrabajo().length===0){
         alert("por favor, ingresa un numero de familiares")
-        
+       
 
-    }else{
-    contador=arrayTrabajo().length
+    }
+    
+    else{
+    let contador=arrayTrabajo().length
     for (x=0;x<cantidad;x+=1){
         let li=document.createElement("li");
         let classT=document.createAttribute("class")
@@ -152,21 +156,26 @@ function arrayValoresFamiliares(array){
 }
 
 function removerFamiliares(array){
+    
     for (x=array.length
     ;x>0;x-=1){arrayTrabajo()[x-1].remove()
     }
 }
 
-function removerFamiliar(array){
+function removerFamiliar(){
+    let FamiliaresIni=document.querySelector("#botonAgregarInicial")
+    let agregarFaSec=document.querySelector("#botonAgregarSecundario")
+    let hidden=document.createAttribute("hidden")
+    if(arrayTrabajo().length===0&&FamiliaresIni.hidden){
+        FamiliaresIni.removeAttribute("hidden")
+        agregarFaSec.setAttributeNode(hidden)
+    }else if (arrayTrabajo().length>0){
     arrayTrabajo()[arrayTrabajo().length-1].remove()
+    }
 }
 
 let H2Cambiante1=document.querySelector("#textoH2")
-
 let H2Cambiante2=document.querySelector("#textoH2B")
-
-//bueno, lo te tengo que hacer ahora, es reemplazar/agregar bootstrap a todo esto, y que quede
-//menos choto, eso no mas, vamos a hacerlo facil, sin cosas raras
 
 
 
