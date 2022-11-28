@@ -155,12 +155,6 @@ function arrayValoresFamiliares(array){
     return arrayValores
 }
 
-function removerFamiliares(array){
-    
-    for (x=array.length
-    ;x>0;x-=1){arrayTrabajo()[x-1].remove()
-    }
-}
 
 function removerFamiliar(){
     let FamiliaresIni=document.querySelector("#botonAgregarInicial")
