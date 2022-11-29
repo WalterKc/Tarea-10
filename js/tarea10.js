@@ -5,7 +5,7 @@ function creadorDelista(max){
         alert("por favor, ingresa un numero de familiares")
     }
     else{
-    for (x=0;x<max;x+=1){
+    for (i=0;i<max;i+=1){
         let li=document.createElement("li");
         let classT=document.createAttribute("class")
         classT.value="familiar"
@@ -28,9 +28,9 @@ function ObtenerArrayFamiliares(){
 
 
 function creadorDeInputs(array,valor){
-    for (x=valor;x<array.length;x+=1){
+    for (i=valor;i<array.length;i+=1){
     let label=document.createElement("label");
-    label.innerHTML="Familiar"+(x+1);
+    label.innerHTML="Familiar"+(i+1);
     let id=document.createAttribute("id")
     id.value="familiar"
     label.setAttributeNode(id)
@@ -50,8 +50,8 @@ function creadorDeInputs(array,valor){
     input.setAttributeNode(placeholder)
     input.setAttributeNode(idA)
     input.setAttributeNode(type)
-    array[x].appendChild(label)
-    array[x].appendChild(input) 
+    array[i].appendChild(label)
+    array[i].appendChild(input) 
     }
 }
 
@@ -68,7 +68,7 @@ function crearMasFamiliares(cantidad){
     
     else{
     let contador=ObtenerArrayFamiliares().length
-    for (x=0;x<cantidad;x+=1){
+    for (i=0;i<cantidad;i+=1){
         let li=document.createElement("li");
         let classT=document.createAttribute("class")
         classT.value="familiar"
@@ -127,8 +127,8 @@ function ObtenerPromedio(array){
        
     }else{
         let contador=0
-        for (x of array){
-            contador+=x
+        for (i of array){
+            contador+=i
         }
         return (contador/array.length)
     }
@@ -143,8 +143,8 @@ function ObtenerNumDeFamiliares(){
 
 function ObtenerEdadFamiliares(array){
     let arrayValores=[]
-    for (x of array){
-        arrayValores.push(Number(x.childNodes[1].value))
+    for (i of array){
+        arrayValores.push(Number(i.childNodes[1].value))
     }
     return arrayValores
 }
